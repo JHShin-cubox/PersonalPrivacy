@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: test
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    cache: false
+
+  main:
+    allow-bean-definition-overriding: true
+
+  upload:
+    dir: /path/upload
+
+server:
+  port : 8084
+  forward-headers-strategy: native
+
+
+
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>개인정보 동의서</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <div class="container">
+            <div class="top">
+                <p class="title">개인 정보 동의서</p>
+                <p class="sub_title">수집에 동의하지 않을수 있으나 거부시 서비스 이용이 불가 합니다.</p>
+            </div>
+            <div>
+                <div class="form_item">
+                    <img class="form_img" src="/static/img/phone_icon.png">
+                    <input class="mInput" type="text" maxlength="12" id="mPhone" name="mPhone" onkeyup="onlyNumber(this)" placeholder="휴대전화번호( -제외 숫자만 입력 )">
+                </div>
+                <div class="form_item">
+                    <img class="form_img" src="/static/img/person_icon.png">
+                    <input class="mInput" type="text" id="mName" name="mName" placeholder="이름">
+                </div>
+            </div>
+            <div class="agree_wrap">
+                <div class="agree_item">
+                    <div id="all_area" class="input_area">
+                        <input id="privacyAll" type="checkbox" class="blind">
+                        <svg id="allCheck" class="check_btn" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 0 1-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"></path>
+                        </svg>
+                        <label for="privacyAll" class="agree_title">약관 전체 동의</label>
+                    </div>
+
+                </div>
+                <div class="agree_item">
+                    <div id="first_area" class="input_area">
+                        <input id="privacyFirst" type="checkbox" class="blind">
+                        <svg id="firstCheck" class="check_btn" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"  height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 0 1-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"></path>
+                        </svg>
+                        <label for="privacyFirst" class="agree_title"><span class="essential">[필수]</span> 개인정보 수집·이용 내역</label>
+                    </div>
+
+                    <table>
+                        <colgroup>
+                            <col width="22%">
+                            <col width="25%">
+                            <col width="26%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">개인정보 항목</th>
+                            <th scope="col">항목</th>
+                            <th scope="col">보유기간</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>성명, 연락처</td>
+                            <td>실증 참여에 따른 사은품<br> 지급 및 신고 목적</td>
+                            <td>개인정보 수집 및 이용목적이 달성될 때까지<br>(달성 후 즉시 폐기)</td>
+                        </tr>
+                        <tr>
+                            <td>본인의 수하물 및 신발이 포함된 신체(발)에 대한 투시 이미지</td>
+                            <td>해당 실증을 통한 성과수집</td>
+                            <td>개인정보 수집 및 이용목적이 달성될 때까지<br>(달성 후 즉시 폐기)</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p class="warning">개인정보 수집·이용에 대한 동의를 거부할 수 있습니다.<br>그러나 동의를 거부할 경우 실증 참여에 따른 사은품 수령에 제한을 받을 수 있습니다.</p>
+                    <p class="warning"></p>
+                    <p class="warning">본인은 개인정보 수집 및 이용에 관하여 고지받았으며, 이를 충분히 이해하고 동의합니다.</p>
+                </div>
+                <div class="agree_item">
+                    <div id="second_area" class="input_area">
+                        <input id="privacySecond" type="checkbox" class="blind">
+                        <svg id="secondCheck" class="check_btn" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 0 1-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"></path>
+                        </svg>
+                        <label for="privacySecond" class="agree_title"><span class="essential">[필수]</span> 개인정보 제3자 제공 내역</label>
+                    </div>
+
+                    <table>
+                        <colgroup>
+                            <col width="22%">
+                            <col width="25%">
+                            <col width="26%">
+                            <col width="24%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">제공받는 자</th>
+                            <th scope="col">목적</th>
+                            <th scope="col">항목</th>
+                            <th scope="col">보유 기간</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                일신회계법인<br>
+                                ㈜ 씨유박스
+                            </td>
+                            <td>사업관리를 위한<br>인적사항 관리</td>
+                            <td>성명, 연락처</td>
+                            <td>해당 사업 완료 시 즉시 폐기</td>
+                        </tr>
+                        <tr>
+                            <td>㈜ 씨유박스<br>
+                                인천국제공항공사</td>
+                            <td>AI 학습 데이터 수집</td>
+                            <td>본인의 수하물 및 신발이 포함된 신체(발)에 대한 투시 이미지</td>
+                            <td>제한 없음</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p class="warning">개인정보 제3자 제공에 대한 동의를 거부할 권리가 있습니다.<br>
+                        그러나 동의를 거부할 경우 실증 참여 및 사은품 수령에 제한을 받을 수 있습니다.</p>
+                    <p class="warning">본인은 개인정보 제3자 제공에 관하여 고지받았으며, 이를 충분히 이해하고 동의합니다.</p>
+                </div>
+                <div class="agree_item">
+                    <div id="third_area" class="input_area">
+                        <input id="privacyThird" type="checkbox" class="blind">
+                        <svg id="thirdCheck" class="check_btn" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 0 1-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"></path>
+                        </svg>
+                        <span for="privacyThird" class="agree_title"><span class="choice">[선택]</span> 만 14세 미만 보호자 동의</span>
+                    </div>
+                    <div class="choice_form">
+                        <div class="form_item">
+                            <img class="form_img" src="/static/img/phone_icon.png">
+                            <input class="mInput" type="text" id="sPhone" name="sPhone" onkeyup="onlyNumber(this)" placeholder="보호자 휴대전화번호( -제외 숫자만 입력 )">
+                        </div>
+                        <div class="form_item">
+                            <img class="form_img" src="/static/img/person_icon.png">
+                            <input class="mInput" type="text" id="sName" name="sName" placeholder="보호자 이름">
+                        </div>
+                    </div>
+                </div>
+                <button id="submit_btn" class="submit_button" type="button" onclick="agreementSubmit()">제출</button>
+            </div>
+        </div>
+        <div class="modal_container">
+            <div class="modal_wrap">
+                <img src="/static/img/accept.png">
+                <p class="complete">개인정보 동의서 제출이 완료되었습니다.</p>
+                <p><span id="auto_number">5</span>초 뒤에 창에 자동 종료됩니다</p>
+                <button id="modal_btn" type="button">닫기</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

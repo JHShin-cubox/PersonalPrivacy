@@ -1,0 +1,43 @@
+/*==================================================================
+프로젝트명 : 개인정보 동의서
+작성지 : 신정호
+작성일 : 2023년 12월 06일
+용도 : 개인정보 동의서 스타일시트
+==================================================================*/
+
+@charset "utf-8";
+
+/* reset */
+
+
+
+.container{width: 70%; margin: 10% auto 0;}
+.agree_wrap{margin-top: 20px; border-top: 1px solid rgba(0,0,0,0.3);}
+.top{text-align: center; font-weight: 600;}
+.title{font-size: 2.5rem; margin: 40px 0;}
+.sub_title{font-size: 1.5rem;}
+.form{margin-top: 30px;}
+.mLabel{font-size: 1.1rem; display: block; margin: 15px 0 0 32px; position: relative; top: 5px;}
+.mInput{width: 84%; padding: 10px 0 10px 40px; margin: 10px 0 10px 32px; font-size: 1rem;}
+.agree_title{font-size: 1.2rem; position: relative; bottom: 5px;}
+.agree_item{margin-top: 30px;}
+table{width: 100%; border-collapse: collapse; margin: 10px 0 0 32px; width: 90%;}
+td,th{padding: 10px 10px;  border: 1px solid black;}
+th{background: var(--main_color);}
+.warning{margin-left: 32px; color: red; font-size: 0.8rem;}
+.blind{    position: absolute;    clip: rect(0 0 0 0);    width: 1px;    height: 1px;    margin: -1px;    overflow: hidden;}
+.input_area{display: inline-block;}
+.check_btn{color:#8990a0; cursor: pointer;}
+.check_btn.active{color: var(--active_color);}
+.choice_form{margin-top: 10px; display: none;}
+.submit_button{width: 90%; padding: 15px; margin: 42px 0 0 32px; background: #8990a0; color: #ffffff; font-size: 18px;  border: none; border-radius: 6px; cursor: pointer;}
+.submit_button.active{background: var(--active_color);}
+.form_img{width: 20px; position: absolute; bottom: 21px; left: 45px;}
+.form_item{position: relative;}
+
+.modal_container{background: rgba(0,0,0,0.6); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; display: none;}
+.modal_wrap{background-color: white; width: 500px; height: 500px; position: relative; top: 20%; margin: 0 auto; border-radius: 8px; text-align: center;}
+.modal_wrap > img { width: 150px; margin: 55px 0 30px; }
+.modal_wrap > p {margin-bottom: 40px;}
+.complete{ font-weight: bold; font-size: 20px;}
+.modal_wrap > button {width: 75%; padding: 15px 0; margin-top: 5px; font-size: 20px; background: rgb(75 174 79); border: none; color: #ffffff; border-radius: 8px; cursor: pointer; font-weight: bold;}
